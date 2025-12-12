@@ -1,1 +1,0 @@
-parsePoints :: String -> [Point]
