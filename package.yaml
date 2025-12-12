@@ -1,6 +1,6 @@
-name:                fp-lab2
+name:                fp-lab3
 version:             0.1.0.0
-github:              "WWamich/fp-lab2"
+github:              "WWamich/fp-lab3"
 license:             BSD-3-Clause
 author:              "WWamich" 
 maintainer:          "admiral3233@mail.ru"
@@ -18,16 +18,16 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-  - Dict
-  - Data.Dict.Internal
+  - Interpolation
+  - Data.Interpolation.Internal
 
 tests:
-  fp-lab2-test:
+  fp-lab3-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
     dependencies:
-    - fp-lab2
+    - fp-lab3
     - tasty
     - tasty-hunit
     - tasty-quickcheck 
