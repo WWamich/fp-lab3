@@ -40,10 +40,15 @@ jobs:
         sudo mv ormolu /usr/local/bin/
     - name: Install HLint
       run: |
-        curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s .
-        sudo mv hlint /usr/local/bin/
+        wget -q -O hlint.tar.gz https://github.com/ndmitchell/hlint/releases/download/v3.8/hlint-3.8-x86_64-linux.tar.gz
+        tar -xzf hlint.tar.gz
+        sudo mv hlint-3.8/hlint /usr/local/bin/
+        chmod +x /usr/local/bin/hlint
+        rm hlint.tar.gz
+
     - name: Check formatting with ormolu
       run: find src test -type f -name "*.hs" -exec ormolu --mode check {} +
+
     - name: Run hlint
       run: hlint . --no-exit-code
     - name: Build and test project
